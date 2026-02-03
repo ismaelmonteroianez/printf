@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printstr.c                                      :+:      :+:    :+:   */
+/*   ft_printpoint.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ismonter <ismonter@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/03 16:37:11 by ismonter          #+#    #+#             */
-/*   Updated: 2026/02/03 18:46:34 by ismonter         ###   ########.fr       */
+/*   Created: 2026/02/03 20:35:10 by ismonter          #+#    #+#             */
+/*   Updated: 2026/02/03 20:55:30 by ismonter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "ft_printf.h"
 
-int	ft_printstr(char *str)
+int	ft_printpoint(unsigned int nbr)
 {
-	int	i;
 	int	n;
 
-	i = 0;
-	n = 0;
-	if (str == NULL)
-	{
-		write(1, "(null)", 6);
-		return (6);
-	}
-	while (str[i] != '\0')
-	{
-		n = n + ft_printchar(str[i]);
-		i++;
-	}
+	write(1, "0x", 2);
+	n = 2;	
+	n = n + ft_printminhex(nbr);
 	return (n);
 }

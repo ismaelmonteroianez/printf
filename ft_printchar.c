@@ -6,7 +6,7 @@
 /*   By: ismonter <ismonter@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 13:20:43 by ismonter          #+#    #+#             */
-/*   Updated: 2026/02/02 17:21:00 by ismonter         ###   ########.fr       */
+/*   Updated: 2026/02/02 20:41:36 by ismonter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,5 @@
 
 int	ft_printchar(char c)
 {
-	write(1, &c, 1);	
+	return (write(1, &c, 1));
 }
-

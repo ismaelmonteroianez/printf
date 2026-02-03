@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printstr.c                                      :+:      :+:    :+:   */
+/*   ft_printmaxhex.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ismonter <ismonter@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/03 16:37:11 by ismonter          #+#    #+#             */
-/*   Updated: 2026/02/03 18:46:34 by ismonter         ###   ########.fr       */
+/*   Created: 2026/02/03 20:32:03 by ismonter          #+#    #+#             */
+/*   Updated: 2026/02/03 20:33:08 by ismonter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include "ft_printf.h"
 
-int	ft_printstr(char *str)
+int	ft_printmaxhex(unsigned int nbr)
 {
-	int	i;
 	int	n;
+	const char *dic_hex = "0123456789ABCDEF";
+	char a;
 
-	i = 0;
 	n = 0;
-	if (str == NULL)
+	if (nbr >= 16)
 	{
-		write(1, "(null)", 6);
-		return (6);
+		n = n + ft_printmaxhex(nbr / 16);
+		a = dic_hex[nbr % 16];
+		write(1, &a, 1);
+		n++;
+		return (n);
 	}
-	while (str[i] != '\0')
-	{
-		n = n + ft_printchar(str[i]);
-		i++;
-	}
+	a = dic_hex[nbr % 16];
+	write (1, &a, 1);
+	n++;
 	return (n);
 }
