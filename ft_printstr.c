@@ -6,11 +6,10 @@
 /*   By: ismonter <ismonter@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 16:37:11 by ismonter          #+#    #+#             */
-/*   Updated: 2026/02/03 18:46:34 by ismonter         ###   ########.fr       */
+/*   Updated: 2026/02/04 11:05:28 by ismonter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "ft_printf.h"
 
 int	ft_printstr(char *str)

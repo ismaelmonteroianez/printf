@@ -6,7 +6,7 @@
 /*   By: ismonter <ismonter@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 13:15:46 by ismonter          #+#    #+#             */
-/*   Updated: 2026/02/03 20:57:12 by ismonter         ###   ########.fr       */
+/*   Updated: 2026/02/04 11:37:58 by ismonter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ int	ft_printargs(char str, va_list args)
 	else if (str == 'u')
 		n = ft_printnbr((unsigned long)va_arg(args, unsigned int));
 	else if (str == 'x')
-		n = ft_printminhex(va_arg(args, unsigned int));
+		n = ft_printminhex((unsigned long)va_arg(args, unsigned int));
 	else if (str == 'X')
-		n = ft_printmaxhex(va_arg(args, unsigned int));
+		n = ft_printmaxhex((unsigned long)va_arg(args, unsigned int));
 	else if (str == 'p')
-		n = ft_printpoint(va_arg(args, unsigned int));
+		n = ft_printpoint(va_arg(args, unsigned long));
 	return (n);
 }
 
@@ -47,13 +47,14 @@ int	ft_printf(const char *fstr, ...)
 
 	i = 0;
 	n = 0;
+	if (!fstr)
+		return (-1);
 	va_start(args, fstr);
 	while (fstr[i] != '\0')
 	{
 		if (fstr[i] == '%')
 		{
-			i++;
-			n = n + ft_printargs(fstr[i], args);
+			n = n + ft_printargs(fstr[++i], args);
 			i++;
 		}
 		else
@@ -74,13 +75,19 @@ int	main(void)
 	char	c;
 
 	c = 'z';
+	char *p = "Holaaa";
 	ft_printf("Hola %c %%a\n", c);
-	printf("%d\n", printf("Original: %s\n", NULL));
+	printf("%d\n", printf("Original: %s\n", (char *)NULL));
 	printf("%d\n", ft_printf("Ismaelll: %s\n", NULL));
 	printf("%d\n", printf("Num: %d\n", 1000));
 	printf("%d\n", ft_printf("Num: %d\n", INT_MIN));
-	printf("%d\n", ft_printf("%x", 1000));
-	printf("%d\n", printf("%x", 1000));
+	printf("%d\n", ft_printf("%X\n", 0x1000));
+	printf("%d\n", printf("%X\n", 0x12ef76));
+	printf("%d\n", ft_printf("%p\n", p));
+	printf("%d\n", printf("%p\n", p));
+	printf("%d\n", printf(NULL));
+	printf("%d\n", ft_printf(NULL));
+
 	return (0);
 }
 */

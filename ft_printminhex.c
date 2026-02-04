@@ -6,17 +6,17 @@
 /*   By: ismonter <ismonter@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 16:49:49 by ismonter          #+#    #+#             */
-/*   Updated: 2026/02/03 20:33:16 by ismonter         ###   ########.fr       */
+/*   Updated: 2026/02/04 10:01:59 by ismonter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	ft_printminhex(unsigned int nbr)
+int	ft_printminhex(unsigned long nbr)
 {
-	int	n;
-	const char *dic_hex = "0123456789abcdef";
-	char a;
+	int			n;
+	const char	*dic_hex = "0123456789abcdef";
+	char		a;
 
 	n = 0;
 	if (nbr >= 16)
