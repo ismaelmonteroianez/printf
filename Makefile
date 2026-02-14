@@ -6,7 +6,7 @@
 #    By: ismonter <ismonter@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/03 15:58:20 by ismonter          #+#    #+#              #
-#    Updated: 2026/02/03 20:48:24 by ismonter         ###   ########.fr        #
+#    Updated: 2026/02/14 14:29:12 by ismonter         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
-%.o: %.c libft.h
+%.o: %.c ft_printf.h
 	cc $(CFLAGS) -c $< -o $@
 
 clean:

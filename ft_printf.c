@@ -6,7 +6,7 @@
 /*   By: ismonter <ismonter@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 13:15:46 by ismonter          #+#    #+#             */
-/*   Updated: 2026/02/04 11:37:58 by ismonter         ###   ########.fr       */
+/*   Updated: 2026/02/07 13:13:55 by ismonter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	ft_printf(const char *fstr, ...)
 	va_end(args);
 	return (n);
 }
-/*
+
 #include <limits.h>
 
 int	main(void)
@@ -90,4 +90,3 @@ int	main(void)
 
 	return (0);
 }
-*/
